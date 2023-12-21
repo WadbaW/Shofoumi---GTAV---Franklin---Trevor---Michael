@@ -1,0 +1,223 @@
+:root {
+    font-size: 62.5%;
+    margin: 0;
+    --colprim: red;
+    --colsec: red;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+@font-face {
+    font-family: 'Gta';
+    src: url(/assets/fonts/pricedown\ bl.otf);
+}
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(34, 34, 34);
+    backdrop-filter: brightness(.3);
+    background-image: url(/assets/img/HomeWallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.sound-img {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 5rem;
+    z-index: 3;
+    transition: 1s;
+}
+article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.menu {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    height: 5rem;
+    z-index: 3;
+}
+.menu:hover {
+    transform: rotate(5deg);
+}
+.nav {
+    transform: translateX(-50vw);
+}
+nav p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+    padding: 3vh 0;
+}
+nav h3.button, .replay {
+    margin-top: 10vh;
+}
+nav h3.button:hover {
+    color: red;
+}
+nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .9);
+}
+.nav-close {
+    transform: translateY(-110%);
+}
+.nav-open {
+    transform: translateY(0);
+}
+.title-choice {
+    display: flex;
+    margin-top: 6vh;
+}
+.title-choice h2 {
+    margin: 0 1vw;
+    width: 20vw;
+    text-align: center;
+}
+.avatar-fixed {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: 10rem;
+    width: 10rem;
+    background-size: contain;
+    background-position: center;
+}
+.avatar, .game, .end {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+p, h1, h2, h3{
+    margin: 0;
+    font-size: 4rem;
+    font-family: 'Gta', sans-serif;
+    color: white;
+}
+h1, h2 {
+    padding: 5vh 0;
+    font-size: 8rem;
+}
+h2 {
+    padding: 2vh 0;
+}
+.vs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.display-choices, .choice-game {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50vh;
+    justify-content: center;
+    padding-bottom: 10vh;
+}
+img {
+    height: 30vh;
+}
+.img-hidden {
+    transform: translateY(-100%);
+    filter: blur(5px);
+}
+.img-show {
+    transform: translateY(0);
+    filter: blur(0);
+    transition: 1s;
+}
+.button {
+    padding-bottom: 3vh;
+    user-select: none;
+}
+.button:hover {
+    color: var(--colprim);
+}
+.perso, .display {
+    margin: 1vw;
+    width: 20vw;
+    height: 50vh;
+    transition: 260ms;
+    background-size: cover;
+    background-position: top center;
+}
+.perso:hover{
+    width: 20.3vw;
+    height: 50.3vh;
+    transition: 260ms;
+    border: solid 4px var(--colprim);
+}
+.player-animate-hidden, .bot-animate-hidden{
+    opacity: 0;
+    backdrop-filter: blur(5px);
+    transform: translateX(-100%);
+}
+.bot-animate-hidden {
+    transform: translateX(+100%);
+}
+.animate-show {
+    opacity: 1;
+    backdrop-filter: blur(0);
+    transform: translateX(0);
+}
+.score-hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-100%);
+}
+.score-show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+section.game *, div.nav * {
+    transition: all .6s;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Franklin {
+    background-image: url(/assets/img/Franklin.jpg);
+}
+#Trevor {
+    background-image: url(/assets/img/Trevor.jpg);
+}
+#Michael {
+    background-image: url(/assets/img/Michael.jpg);
+}
+#ballas {
+    background-image: url(/assets/img/ballas.jpg);
+}
+#ballas:hover {
+    border: solid 4px #a05bce;
+}
+#familles {
+    background-image: url(/assets/img/familles.jpg);
+}
+#familles:hover {
+    border: solid 4px #76955a;
+}
+.hidden {
+    display: none;
+}
+.hide-behind-menu {
+    opacity: 0;
+    transition: all .2s;
+}
