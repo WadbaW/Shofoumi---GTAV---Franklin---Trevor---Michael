@@ -8,11 +8,11 @@ let menu = document.querySelector('.rules'); // le menu déroulant
 let perso = document.querySelectorAll('div.display-choices .column'); // les perso à afficher lors des duels
 let soundButton = document.querySelector('.sound-img');
 
-let selectionSound = new Audio("assets/sounds/selection-sound-effect.mp3");
-let themeSong = new Audio("assets/sounds/Theme Song.mp3");
-let notificationSound = new Audio("assets/sounds/notification.mp3");
-let cardSound = new Audio("assets/sounds/cardsound.mp3");
-let stopSound = new Audio("assets/sounds/stop.mp3");
+let selectionSound = new Audio("../sounds/selection-sound-effect.mp3");
+let themeSong = new Audio("../sounds/Theme Song.mp3");
+let notificationSound = new Audio("../sounds/notification.mp3");
+let cardSound = new Audio("../sounds/cardsound.mp3");
+let stopSound = new Audio("../sounds/stop.mp3");
 
 let indexRandom =(tab)=> Math.floor(Math.random()*tab.length); // index aléatoire
 let bot = choices[indexRandom(choices)].id; // choix du bot aléatoire
@@ -74,7 +74,7 @@ let avatarChosen = (chosen) => { // active l'avatar choisi et permet l'affichage
     let displayAvatar = document.querySelector('.avatar-fixed');
 
     colorChoice = chosen;
-    displayAvatar.style.backgroundImage = `url(/assets/img/${chosen}.jpg)`;
+    displayAvatar.style.backgroundImage = `url(../img/${chosen}.jpg)`;
     displayAvatar.style.border = 'solid 3px var(--colprim)';
     displayAvatar.style.transform = chosen === 'ballas' ? '' : 'scaleX(-1)';
 
@@ -88,7 +88,7 @@ let avatarChosen = (chosen) => { // active l'avatar choisi et permet l'affichage
         r.style.setProperty('--colsec', '#a05bce');
     };
     play.addEventListener('click', ()=> {
-        body.style.backgroundImage = 'url(/assets/img/GTA5-PC-4K_06.jpg)';
+        body.style.backgroundImage = 'url(../img/GTA5-PC-4K_06.jpg)';
         next(0);   
     });
 };
@@ -99,10 +99,10 @@ let displayChoice =(chosen)=>{ // affichage des choix de la manche, ainsi que le
     let textRound = document.querySelector('.game h2');
 
     textRound.textContent = rounds === 10 ? `Rounds ${rounds}` : `Rounds 0${rounds}`;
-    displayPlayer.style.backgroundImage = `url(/assets/img/${chosen}.jpg)`;
+    displayPlayer.style.backgroundImage = `url(/../img/${chosen}.jpg)`;
     displayPlayer.style.border = 'solid 5px var(--colprim)';
     displayBot.style.border = 'solid 5px var(--colsec)';
-    displayBot.style.backgroundImage = `url(/assets/img/${bot}.jpg)`;
+    displayBot.style.backgroundImage = `url(../img/${bot}.jpg)`;
 
     let resultScore = document.querySelectorAll('.result');
     let resultRound = verification(chosen);
@@ -170,13 +170,13 @@ let nextRound = ()=> { // si il reste des manches il relance, sinon il calcul le
         let messageResult;
         if (playerScore === botScore){
             messageResult = 'Égalité !';
-            body.style.backgroundImage = 'url(assets/img/egalite.png)';
+            body.style.backgroundImage = 'url(../img/egalite.png)';
         } else if (playerScore > botScore) {
             messageResult = 'Vous avez gagné !';
-            body.style.backgroundImage = 'url(assets/img/victoire.png)';
+            body.style.backgroundImage = 'url(../img/victoire.png)';
         } else {
             messageResult = 'Vous avez perdu !';
-            body.style.backgroundImage = 'url(assets/img/defaite.png)';
+            body.style.backgroundImage = 'url(../img/defaite.png)';
         };
 
         let results = document.querySelectorAll('.result-final');
@@ -212,7 +212,7 @@ let replay = () => { // option de rejouer, reset des données
     sections.forEach((el)=> {
         el.classList.add('hidden');
     })
-    body.style.backgroundImage = `url(assets/img/HomeWallpaper.jpg)`;
+    body.style.backgroundImage = `url(../img/HomeWallpaper.jpg)`;
     reveal(0);
 };
 
