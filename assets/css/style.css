@@ -9,7 +9,7 @@
 }
 @font-face {
     font-family: 'Gta';
-    src: url(/assets/fonts/pricedown\ bl.otf);
+    src: url(assets/fonts/pricedown\ bl.otf);
 }
 body {
     margin: 0;
@@ -19,7 +19,7 @@ body {
     height: 100vh;
     background-color: rgb(34, 34, 34);
     backdrop-filter: brightness(.3);
-    background-image: url(/assets/img/HomeWallpaper.jpg);
+    background-image: url(assets/img/HomeWallpaper.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -194,22 +194,22 @@ section.game *, div.nav * {
     align-items: center;
 }
 #Franklin {
-    background-image: url(/assets/img/Franklin.jpg);
+    background-image: url(assets/img/Franklin.jpg);
 }
 #Trevor {
-    background-image: url(/assets/img/Trevor.jpg);
+    background-image: url(assets/img/Trevor.jpg);
 }
 #Michael {
-    background-image: url(/assets/img/Michael.jpg);
+    background-image: url(assets/img/Michael.jpg);
 }
 #ballas {
-    background-image: url(/assets/img/ballas.jpg);
+    background-image: url(assets/img/ballas.jpg);
 }
 #ballas:hover {
     border: solid 4px #a05bce;
 }
 #familles {
-    background-image: url(/assets/img/familles.jpg);
+    background-image: url(assets/img/familles.jpg);
 }
 #familles:hover {
     border: solid 4px #76955a;

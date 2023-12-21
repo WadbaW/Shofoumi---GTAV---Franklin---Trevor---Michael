@@ -8,11 +8,11 @@ let menu = document.querySelector('.rules'); // le menu déroulant
 let perso = document.querySelectorAll('div.display-choices .column'); // les perso à afficher lors des duels
 let soundButton = document.querySelector('.sound-img');
 
-let selectionSound = new Audio("/assets/sounds/selection-sound-effect.mp3");
-let themeSong = new Audio("/assets/sounds/Theme Song.mp3");
-let notificationSound = new Audio("/assets/sounds/notification.mp3");
-let cardSound = new Audio("/assets/sounds/cardsound.mp3");
-let stopSound = new Audio("/assets/sounds/stop.mp3");
+let selectionSound = new Audio("assets/sounds/selection-sound-effect.mp3");
+let themeSong = new Audio("assets/sounds/Theme Song.mp3");
+let notificationSound = new Audio("assets/sounds/notification.mp3");
+let cardSound = new Audio("assets/sounds/cardsound.mp3");
+let stopSound = new Audio("assets/sounds/stop.mp3");
 
 let indexRandom =(tab)=> Math.floor(Math.random()*tab.length); // index aléatoire
 let bot = choices[indexRandom(choices)].id; // choix du bot aléatoire
@@ -170,13 +170,13 @@ let nextRound = ()=> { // si il reste des manches il relance, sinon il calcul le
         let messageResult;
         if (playerScore === botScore){
             messageResult = 'Égalité !';
-            body.style.backgroundImage = 'url(/assets/img/egalite.png)';
+            body.style.backgroundImage = 'url(assets/img/egalite.png)';
         } else if (playerScore > botScore) {
             messageResult = 'Vous avez gagné !';
-            body.style.backgroundImage = 'url(/assets/img/victoire.png)';
+            body.style.backgroundImage = 'url(assets/img/victoire.png)';
         } else {
             messageResult = 'Vous avez perdu !';
-            body.style.backgroundImage = 'url(/assets/img/defaite.png)';
+            body.style.backgroundImage = 'url(assets/img/defaite.png)';
         };
 
         let results = document.querySelectorAll('.result-final');
@@ -212,7 +212,7 @@ let replay = () => { // option de rejouer, reset des données
     sections.forEach((el)=> {
         el.classList.add('hidden');
     })
-    body.style.backgroundImage = `url(/assets/img/HomeWallpaper.jpg)`;
+    body.style.backgroundImage = `url(assets/img/HomeWallpaper.jpg)`;
     reveal(0);
 };
 
@@ -256,12 +256,12 @@ soundButton.addEventListener('click', ()=> {
     switch(isPlaying) {
         case true:
             themeSong.pause();
-            soundButton.src = '/assets/img/mute.png';
+            soundButton.src = 'assets/img/mute.png';
             isPlaying = false;
             break;
         case false:
             themeSong.play();
-            soundButton.src = '/assets/img/speaker-filled-audio-tool.png';
+            soundButton.src = 'assets/img/speaker-filled-audio-tool.png';
             isPlaying = true;
             break;
     };
