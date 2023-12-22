@@ -9,10 +9,10 @@ let perso = document.querySelectorAll('div.display-choices .column'); // les per
 let soundButton = document.querySelector('.sound-img');
 
 let selectionSound = new Audio("../sounds/selection-sound-effect.mp3");
-let themeSong = new Audio("../sounds/Theme Song.mp3");
+let themeSong = new Audio("../sounds/ThemeSong.mp3");
 let notificationSound = new Audio("../sounds/notification.mp3");
 let cardSound = new Audio("../sounds/cardsound.mp3");
-let stopSound = new Audio("../sounds/stop.mp3");
+let buttonSound = new Audio("../sounds/stop.mp3");
 
 let indexRandom =(tab)=> Math.floor(Math.random()*tab.length); // index aléatoire
 let bot = choices[indexRandom(choices)].id; // choix du bot aléatoire
@@ -30,9 +30,9 @@ selectionSound.volume = .3;
 themeSong.volume = .04;
 notificationSound.volume = .1;
 cardSound.volume = .8;
-stopSound.volume = .2;
+buttonSound.volume = .2;
 themeSong.loop = 'true';
-themeSong.play();
+// themeSong.play();
 
 
 let logPop = document.querySelector('.img-hidden'); // le logo du début
@@ -223,7 +223,7 @@ allPerso.forEach((el)=> {
 });
 let allButton = document.querySelectorAll('.button');
 allButton.forEach((el)=> {
-    el.addEventListener('click', ()=> stopSound.play());
+    el.addEventListener('click', ()=> buttonSound.play());
 });
 
 let buttonNext = document.querySelector('.game .next'); // événement bouton suivant
@@ -251,7 +251,7 @@ buttonLeave.addEventListener('click',()=>{
     soundButton.classList.add('hidden');
 });
 
-let isPlaying = true;
+let isPlaying = false;
 
 soundButton.addEventListener('click', ()=> {
     switch(isPlaying) {
