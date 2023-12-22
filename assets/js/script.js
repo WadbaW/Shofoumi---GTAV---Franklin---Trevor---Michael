@@ -74,6 +74,7 @@ let avatarChosen = (chosen) => { // active l'avatar choisi et permet l'affichage
     let displayAvatar = document.querySelector('.avatar-fixed');
 
     colorChoice = chosen;
+    console.log(chosen);
     displayAvatar.style.backgroundImage = `url(../img/${chosen}.jpg)`;
     displayAvatar.style.border = 'solid 3px var(--colprim)';
     displayAvatar.style.transform = chosen === 'ballas' ? '' : 'scaleX(-1)';
@@ -93,13 +94,13 @@ let avatarChosen = (chosen) => { // active l'avatar choisi et permet l'affichage
     });
 };
 
-let displayChoice =(chosen)=>{ // affichage des choix de la manche, ainsi que les gains reçus (animé) 
+let displayChoice =(chosen)=>{ // affichage les choix de la manche, ainsi que les gains reçus (animé) 
     let displayPlayer = document.querySelector('.display.chosen');
     let displayBot = document.querySelector('.display.bot');
     let textRound = document.querySelector('.game h2');
 
     textRound.textContent = rounds === 10 ? `Rounds ${rounds}` : `Rounds 0${rounds}`;
-    displayPlayer.style.backgroundImage = `url(/../img/${chosen}.jpg)`;
+    displayPlayer.style.backgroundImage = `url(../img/${chosen}.jpg)`;
     displayPlayer.style.border = 'solid 5px var(--colprim)';
     displayBot.style.border = 'solid 5px var(--colsec)';
     displayBot.style.backgroundImage = `url(../img/${bot}.jpg)`;
