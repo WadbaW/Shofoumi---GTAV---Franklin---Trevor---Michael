@@ -71,11 +71,13 @@ let verification = (chosen) => { // vérifiaction des victoires, ajout des score
 };
 
 let avatarChosen = (chosen) => { // active l'avatar choisi et permet l'affichage des couleurs en fonction
+    console.log(chosen);
+    
     let displayAvatar = document.querySelector('.avatar-fixed');
 
     colorChoice = chosen;
     console.log(chosen);
-    displayAvatar.style.backgroundImage = `url(../img/${chosen}.jpg)`;
+    displayAvatar.style.backgroundImage = `url(./assets/img/${chosen}.jpg)`;
     displayAvatar.style.border = 'solid 3px var(--colprim)';
     displayAvatar.style.transform = chosen === 'ballas' ? '' : 'scaleX(-1)';
 
@@ -89,7 +91,7 @@ let avatarChosen = (chosen) => { // active l'avatar choisi et permet l'affichage
         r.style.setProperty('--colsec', '#a05bce');
     };
     play.addEventListener('click', ()=> {
-        body.style.backgroundImage = 'url(../img/GTA5-PC-4K_06.jpg)';
+        body.style.backgroundImage = 'url(./assets/img/GTA5-PC-4K_06.jpg)';
         next(0);   
     });
 };
@@ -100,10 +102,10 @@ let displayChoice =(chosen)=>{ // affichage les choix de la manche, ainsi que le
     let textRound = document.querySelector('.game h2');
 
     textRound.textContent = rounds === 10 ? `Rounds ${rounds}` : `Rounds 0${rounds}`;
-    displayPlayer.style.backgroundImage = `url(../img/${chosen}.jpg)`;
+    displayPlayer.style.backgroundImage = `url(./assets/img/${chosen}.jpg)`;
     displayPlayer.style.border = 'solid 5px var(--colprim)';
     displayBot.style.border = 'solid 5px var(--colsec)';
-    displayBot.style.backgroundImage = `url(../img/${bot}.jpg)`;
+    displayBot.style.backgroundImage = `url(./assets/img/${bot}.jpg)`;
 
     let resultScore = document.querySelectorAll('.result');
     let resultRound = verification(chosen);
@@ -171,13 +173,13 @@ let nextRound = ()=> { // si il reste des manches il relance, sinon il calcul le
         let messageResult;
         if (playerScore === botScore){
             messageResult = 'Égalité !';
-            body.style.backgroundImage = 'url(../img/egalite.png)';
+            body.style.backgroundImage = 'url(./assets/img/egalite.png)';
         } else if (playerScore > botScore) {
             messageResult = 'Vous avez gagné !';
-            body.style.backgroundImage = 'url(../img/victoire.png)';
+            body.style.backgroundImage = 'url(./assets/img/victoire.png)';
         } else {
             messageResult = 'Vous avez perdu !';
-            body.style.backgroundImage = 'url(../img/defaite.png)';
+            body.style.backgroundImage = 'url(./assets/img/defaite.png)';
         };
 
         let results = document.querySelectorAll('.result-final');
@@ -213,7 +215,7 @@ let replay = () => { // option de rejouer, reset des données
     sections.forEach((el)=> {
         el.classList.add('hidden');
     })
-    body.style.backgroundImage = `url(../img/HomeWallpaper.jpg)`;
+    body.style.backgroundImage = `url(./assets/img/HomeWallpaper.jpg)`;
     reveal(0);
 };
 
